@@ -5,7 +5,7 @@
                <div class="content_post">
                 <ul class="more">
                  <li>
-                   <%= link_to '詳細', "/blog/#{blog.id}", method: :get %>
+                   <%= link_to '詳細', "/blogs/#{blog.id}", method: :get %>
                  </li>
                  <% if user_signed_in? && current_user.id == blog.user_id %>
                  <li>
@@ -25,10 +25,10 @@
                  </span>
                </div>
             </div>
-          <div class="card-action">
+          <%# <div class="card-action">
            <a href="#">show</a>
            <a href="#">edit</a>
            <a href="#">destroy</a>
-          </div>
+          </div> %>
         </div>
       </div>
