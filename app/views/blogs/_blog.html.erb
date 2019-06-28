@@ -1,0 +1,34 @@
+    <div class="row">
+        <div class="col s12 m6">
+          <div class="card blue-grey darken-1">
+            <div class="card-content white-text">
+               <div class="content_post">
+                <ul class="more">
+                 <li>
+                   <%= link_to '詳細', "/blog/#{blog.id}", method: :get %>
+                 </li>
+                 <% if user_signed_in? && current_user.id == blog.user_id %>
+                 <li>
+                   <%= link_to '編集', "/blogs/#{blog.id}/edit", method: :get %>
+                 </li>
+                 <li>
+                   <%= link_to '削除', "/blogs/#{blog.id}",method: :delete %>
+                 </li>
+                 <% end %>
+                </ul>
+               </div>
+                 <%= simple_format(blog.text) %>
+                 <span class="name">
+                  <a href="">
+                   <span>投稿者</span><%= blog.user.nickname %>
+                  </a>
+                 </span>
+               </div>
+            </div>
+          <div class="card-action">
+           <a href="#">show</a>
+           <a href="#">edit</a>
+           <a href="#">destroy</a>
+          </div>
+        </div>
+      </div>
